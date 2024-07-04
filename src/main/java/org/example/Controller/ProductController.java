@@ -30,17 +30,17 @@ public class ProductController {
     }
 
     @GetMapping("/productsById/{id}")
-    public Product findById(@PathVariable int id) {
+    public Product findById(@PathVariable("id") int id) {
         return productService.getProductById(id);
     }
 
     @GetMapping("/products/{name}")
-    public Product findByName(@PathVariable String name) {
+    public Product findByName(@PathVariable("name") String name) {
         return productService.getProductByName(name);
     }
 
     @DeleteMapping("/products/{id}")
-    public String deleteItem(@PathVariable int id) {
+    public String deleteItem(@PathVariable("id") int id) {
         return productService.deleteProduct(id);
     }
 
